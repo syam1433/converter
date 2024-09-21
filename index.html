@@ -22,31 +22,38 @@
                         <input type="number" placeholder="Enter the number">
                     </div>
                 </div>
-                <div class="LISTS">
-                    <div class="from">
-                        <div class="images">
-                            <img src="https://flagsapi.com/IN/flat/64.png" style="width: 60px; height: 40px;">
+                <div class="lists">
+                    <div class="LISTS">
+                        <div class="from">
+                            <div class="images">
+                                <img class="flag1" src="https://flagsapi.com/IN/flat/64.png" style="width: 60px; height: 50px;">
+                            </div>
+                            <select class="one" name="from" id="countrieslistfrom">
+                                <option value="">SELECT</option>
+                            </select>
                         </div>
-                        <select name="from" id="countrieslistfrom">
-                        </select>
-                    </div>
-                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                    <div class="to">
-                        <div class="images">
-                            <img src="https://flagsapi.com/US/flat/64.png" style="width: 60px; height: 40px;">
+                        <i id="swap" class="fa-solid fa-arrow-right-arrow-left"></i>
+                        <div class="to">
+                            <div class="images">
+                                <img class="flag2" src="https://flagsapi.com/US/flat/64.png" style="width: 60px; height: 50px;">
+                            </div>
+                            <select class="two" name="to" id="countrieslistto">
+                                <option value="">SELECT</option>
+                            </select>
                         </div>
-                        <select name="to" id="countrieslistto">
-                        </select>
                     </div>
                 </div>
             </div>
             <div class="msg">
             </div>
             <div class="btn">
-                <button>Exchange</button>
+                <button>
+                    Convert
+                </button>
             </div>
         </div>
     </div>
+    <hr>
     <footer>
         <h2>&copy; developed by syam</h2>
     </footer>

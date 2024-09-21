@@ -2,13 +2,13 @@
     margin: 0;
     padding: 0;
     color: white;
-    font-family: "Sofadi One", system-ui;
+    font-family: "Roboto Condensed", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 .main{
-    height: 678px;
-    background-image: url("layered-waves-haikei.png");
+    height: 725px;
+    background-image: url("background.jpg");
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -57,20 +57,28 @@
     font-size: 19px;
     font-weight: bold;
 }
+.lists{
+    width: 100%;
+}
 .LISTS{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding-top: 40px;
+}
+.images{
+    display: flex;
+    align-items: center;
 }
 .from{
     display: flex;
     height: 40px;
+    width: 38%;
     border: 1px solid gray;
     background-color: black;
 }
 select{
     height: 40px;
-    width: 55px;
+    width: 70%;
     outline: none;
     border: none;
     background-color: black;
@@ -78,11 +86,14 @@ select{
 .to{
     display: flex;
     height: 40px;
+    width: 38%;
     border: 1px solid gray;
     background-color: black;
 }
 i{
-    padding-top: 10px;
+    padding-top: 13px;
+    color: white;
+    font-family: "Roboto Condensed", sans-serif;
 }
 .msg{
     display: flex;
@@ -92,27 +103,27 @@ i{
 .btn{
    display: flex;
    justify-content: center;
-   padding-top: 30px;
+   margin-top: 50px;
 }
 .btn button {
-    padding: 10px 20px;
-    font-size: 24px;
-    text-align: center;
+    font-size: 25px;
+    width: 40%;
+    height: 40px;
+    font-family: "Roboto Condensed", sans-serif;
     cursor: pointer;
-    outline: none;
     color: #fff;
-    background-color: transparent;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 5px #5e5e5e;
-}
-  
-.btn button:hover {background-color:black }
-  
-.btn button:active {
     background-color: black;
-    box-shadow: 0 3px #5e5e5e;
-    transform: translateY(3px);
+    border: 1px solid aliceblue;
+    border-radius: 5px;
+}
+.btn button:active {
+    background-color: white;
+    color: rgb(1, 1, 1);
+}
+#icon{
+    font-size: 22px;
+    margin-left: -12px;
+    margin-right: 8px;
 }
 footer{
     background-color: black;
@@ -129,7 +140,7 @@ footer{
         min-height: calc(100);
     }
     .amount input{
-        width: 270px;
+        width: 90%;
         height: 35px;
         border: 1px solid gray;
         font-size: 14px;
@@ -139,7 +150,6 @@ footer{
     .h1{
         font-size: 25px;
     }
-    
 }
 @media screen and (max-width:450px)
 {

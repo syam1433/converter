@@ -165,15 +165,16 @@ const countryList = {
     ZMK: "ZM",
     ZWD: "ZW",
   };
+  //accesinglist of countries and placing in options
 let i=0;
 for(let select of CountryList){
     for(code in countryList){
         let newopt=document.createElement("option");
         newopt.innerText=code;
         newopt.value=code;
-        if(select.name==="from" && code==="INR"){
+        if(select.name==="one" && code==="INR"){
             newopt.selected="selected";
-        } else if(select.name==="to" && code==="USD"){
+        } else if(select.name==="two" && code==="USD"){
             newopt.selected="selected";
         }
         select.append(newopt);
@@ -182,12 +183,14 @@ for(let select of CountryList){
         falgupdate(event.target);
     });
 }
+//flagupdate
 const falgupdate=(element)=>{
     let code=element.value;
     let src=`https://flagsapi.com/${countryList[code]}/flat/64.png`;
     let image=element.parentElement.querySelector("img")
     image.src=src;
 }
+//getting answer
 
 btn.addEventListener("click", async (event)=>{
     event.preventDefault();
@@ -196,6 +199,12 @@ btn.addEventListener("click", async (event)=>{
     if(amountval===""|| amountval<1){
         alert("Enter a valid amount");
     }
+    if(fromcurrency.value==="" || tocurrency.value==="")
+        {
+          alert("Please Select The Options");
+          fromcurrency.value="INR";
+          tocurrency.value="USD";
+        }
     const URL1=`${base_url}/${fromcurrency.value}`;
     let response= await fetch(URL1);
     let data1= await response.json();
@@ -203,4 +212,25 @@ btn.addEventListener("click", async (event)=>{
     finalamount=amountval*rates;
     console.log(finalamount);
     msg.innerText=`${amountval} ${fromcurrency.value} = ${finalamount} ${tocurrency.value}`;
+
+    //swapping
+    let a=fromcurrency.value;
+    let b=tocurrency.value;
+    let temp;
+
+    swap.addEventListener("click",()=>{
+    let opt1=document.querySelector(".one option");
+    let opt2=document.querySelector(".two option");
+    let flag1=document.querySelector(".flag1");
+    let flag2=document.querySelector(".flag2");
+    temp=a;
+    a=b;
+    b=temp;
+    fromcurrency.value=a;
+    opt1.innerText=a;
+    tocurrency.value=b;
+    opt2.innerText=b;
+    flag1.src=`https://flagsapi.com/${countryList[a]}/flat/64.png`;
+    flag2.src=`https://flagsapi.com/${countryList[b]}/flat/64.png`;
+    })
 })
