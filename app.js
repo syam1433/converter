@@ -210,7 +210,6 @@ btn.addEventListener("click", async (event)=>{
     let data1= await response.json();
     let rates=data1.conversion_rates[tocurrency.value];
     finalamount=amountval*rates;
-    console.log(finalamount);
     msg.innerText=`${amountval} ${fromcurrency.value} = ${finalamount} ${tocurrency.value}`;
 
     //swapping

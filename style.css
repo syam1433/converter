@@ -57,6 +57,10 @@
     font-size: 19px;
     font-weight: bold;
 }
+.amount input::placeholder {
+    color: gray;
+    padding-left: 10px;
+}
 .lists{
     width: 100%;
 }
